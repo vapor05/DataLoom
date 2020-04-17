@@ -1,0 +1,19 @@
+{
+    "<class>": "com.vapor05.dataloom.util.JSONReflectionTest$ExampleClass",
+    "string": "stringValue",
+    "intValue": 105,
+    "longValue": 1005,
+    "doubleValue":1.05,
+    "example": {
+        "<class>": "com.vapor05.dataloom.util.JSONReflectionTest$ExampleClass",
+        "string": "stringValue2",
+        "intValue": 205
+    },
+    "stringArray": ["elm1", "elm2", "elm3"],
+    "list": ["list1", "list2", "list3"],
+    "dataMap": {
+        "key": "value1",
+        "key2": "value2"
+    },
+    "dataArray": ["da1", "da2", "da3"]
+}
