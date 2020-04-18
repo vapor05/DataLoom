@@ -9,7 +9,7 @@ import java.io.PrintStream;
  */
 public interface Command {
     
-    public void setParameters(String[] parameters);
+    public void setParameters(String[] parameters) throws DataLoomException;
     
     public void setPrintStream(PrintStream out);
     

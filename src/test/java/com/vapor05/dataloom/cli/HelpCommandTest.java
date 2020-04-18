@@ -54,7 +54,8 @@ public class HelpCommandTest {
         
         assertEquals("Generate a file of randomized data using the provided configuration json file.\n" +
             "       Usage:\n" +
-            "           file <config file> <records> <output file> <seed>\n" +
+            "           file <type> <config file> <records> <output file> <seed>\n" +
+            "               <type>: File type to create, accepted values are: csv\n" +
             "               <config file>:  Full filepath to the configuration json file\n" +
             "               <records>:      Number of records to generate\n" +
             "               <output file>:  Full filepath for the file to generate\n" +

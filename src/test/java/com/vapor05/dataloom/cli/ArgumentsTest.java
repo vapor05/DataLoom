@@ -21,12 +21,12 @@ public class ArgumentsTest {
         assertEquals(0, arguments.getParameters().length);
         assertTrue(arguments.getCommand() instanceof HelpCommand);
         
-        args = new String[]{"file", "/test/path/config.json", "125", "/test/path/outfile.csv", "123456789"};
+        args = new String[]{"file", "csv", "src/test/resources/generate_file/test_config.json", "125", "/test/path/outfile.csv", "123456789"};
         arguments = new Arguments(args);
         arguments.parse();
-        assertEquals(4, arguments.getParameters().length);
+        assertEquals(5, arguments.getParameters().length);
         assertTrue(arguments.getCommand() instanceof GenerateFileCommand);
-        expected = new String[]{"/test/path/config.json", "125", "/test/path/outfile.csv", "123456789"};
+        expected = new String[]{"csv", "src/test/resources/generate_file/test_config.json", "125", "/test/path/outfile.csv", "123456789"};
         
         for (int i=0; i<arguments.getParameters().length; i++) assertEquals(expected[i], arguments.getParameters()[i]);
     }
