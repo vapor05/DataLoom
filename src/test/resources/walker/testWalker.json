@@ -1,0 +1,18 @@
+{
+    "key1": "value1",
+    "key2": {
+        "key11": "value11",
+        "key22": {
+            "nestedKey": "nestedValue"
+            }
+        },
+    "array": [1,2,3],
+    "array2": [
+        {
+            "elm1Key": "elm1Value"
+        },
+        {
+            "elm2Key": "elm2Value"
+        }
+    ]
+}
