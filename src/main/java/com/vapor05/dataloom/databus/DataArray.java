@@ -9,7 +9,7 @@ import java.util.List;
  *
  * @author NicholasBocchini
  */
-public class DataArray<T> extends ArrayList {
+public class DataArray<T> extends ArrayList<T> {
     
     public DataArray() {}
     

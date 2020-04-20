@@ -1,7 +1,6 @@
 package com.vapor05.dataloom.databus;
 
 import com.vapor05.dataloom.json.JSONTokener;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -74,6 +73,15 @@ public class DataMap extends HashMap<String, Object> {
         Object value = super.get(key);
         
         if (value == null) throw new DataMapException(value + " is not a valid string");
+        
+        return value.toString();
+    }
+    
+    public String getString(String key, String defaultValue) throws DataMapException
+    {
+        Object value = super.get(key);
+        
+        if (value == null) return defaultValue;
         
         return value.toString();
     }
