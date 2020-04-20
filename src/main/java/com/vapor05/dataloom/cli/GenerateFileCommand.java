@@ -5,18 +5,16 @@ import com.vapor05.dataloom.databus.DataMap;
 import com.vapor05.dataloom.databus.DataMapException;
 import com.vapor05.dataloom.databus.exporter.CSVExporter;
 import com.vapor05.dataloom.databus.exporter.Exporter;
+import com.vapor05.dataloom.generator.AbstractParentGenerator;
 import com.vapor05.dataloom.generator.Generator;
 import com.vapor05.dataloom.json.JSONTokener;
 import com.vapor05.dataloom.transformer.Transformer;
 import com.vapor05.dataloom.util.JSONReflection;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -93,6 +91,11 @@ public class GenerateFileCommand implements Command {
             }
             
             generators[i].setSeed(seed);
+            
+            if (generators[i] instanceof AbstractParentGenerator)
+            {
+                ((AbstractParentGenerator)generators[i]).setChildGeneratorsSeed(seed + i);
+            }
         }
         
         out.println("Loaded " + generators.length + " Generators");
