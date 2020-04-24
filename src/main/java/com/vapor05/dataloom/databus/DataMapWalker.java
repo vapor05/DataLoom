@@ -1,5 +1,6 @@
 package com.vapor05.dataloom.databus;
 
+import com.vapor05.dataloom.cli.DataLoomException;
 import java.util.Arrays;
 
 /**
@@ -63,7 +64,7 @@ public class DataMapWalker {
         return value == null ? defaultValue : value;
     }
     
-    public void update(DataMap parent, String key, Action action) throws DataMapException
+    private void update(DataMap parent, String key, Action action) throws DataMapException
     {
         String[] keys;
         DataMap previous = null;
@@ -157,5 +158,46 @@ public class DataMapWalker {
                 return value;
             }
         });
+    }
+    
+    public void remove(String key) throws DataLoomException
+    {
+        remove(key, record);
+    }
+    
+    private void remove(String key, DataMap parent) throws DataLoomException
+    {
+        String[] keys;
+        Object child;
+        String childKeys = "";
+
+        keys = key.split("\\.");
+        
+        for (int i = 0; i < keys.length; i++)
+        {
+            if (i == keys.length - 1) 
+            {
+                parent.remove(keys[i]);
+            }
+            else 
+            {
+                child = parent.get(keys[i]);
+
+                if (child instanceof DataArray) 
+                {
+                    while (i++ < keys.length-1) childKeys = childKeys + "." + keys[i];
+
+                    for (Object element : (DataArray)child) remove(childKeys.substring(1), (DataMap)element);
+                }
+                else if (!(child instanceof DataMap)) 
+                {
+                    throw new DataLoomException("Incorrect key formatting");
+                }
+                else
+                {
+                    parent = (DataMap) child;
+                }
+            }
+        }
     }
 }

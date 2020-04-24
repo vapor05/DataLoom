@@ -121,4 +121,43 @@ public class DataMapWalkerTest {
         assertEquals(new DataArray("[e1,e2,e3]"), walker.getRecord().getDataArray("arrayKey"));
     }
     
+    @Test
+    public void testRemove() throws Exception
+    {
+        DataMap data = new DataMap("{key:1, keyRemove:valueRemove}");
+        DataMapWalker walker = new DataMapWalker(data);
+        
+        walker.remove("keyRemove");
+        assertEquals(new DataMap("{key:1}"), walker.getRecord());
+        data = new DataMap("{key:1, obj:{keyRemove:valueRemove}}");
+        walker = new DataMapWalker(data);
+        walker.remove("obj.keyRemove");
+        assertEquals(new DataMap("{key:1, obj:{}}"), walker.getRecord());
+        walker.remove("obj");
+        assertEquals(new DataMap("{key:1}"), walker.getRecord());
+        
+        data = new DataMap("{key:1, obj:{obj:{keyRemove:valueRemove}, key:8}}");
+        walker = new DataMapWalker(data);
+        walker.remove("obj.obj.keyRemove");
+        assertEquals(new DataMap("{key:1, obj:{obj:{},key:8}}"), walker.getRecord());
+        walker.remove("notAKey");
+        assertEquals(new DataMap("{key:1, obj:{obj:{},key:8}}"), walker.getRecord());
+        data = new DataMap("{key:1, array:[1,2,3]}");
+        walker = new DataMapWalker(data);
+        walker.remove("array");
+        assertEquals(new DataMap("{key:1}"), walker.getRecord());
+        data = new DataMap("{key:1, array:[{elm1:val},{elm1:val},{elm1:val,elm2:12}]}");
+        walker = new DataMapWalker(data);
+        walker.remove("array.elm1");
+        assertEquals(new DataMap("{key:1, array:[{},{},{elm2:12}]}"), walker.getRecord());
+        data = new DataMap("{key:1, obj:{array:[{elm1:val},{elm1:val},{elm1:val,elm2:12}]}}");
+        walker = new DataMapWalker(data);
+        walker.remove("obj.array.elm1");
+        assertEquals(new DataMap("{key:1, obj:{array:[{},{},{elm2:12}]}}"), walker.getRecord());
+        data = new DataMap("{key:1, array:[{elm1:[{elm1:val}]},{elm1:[{elm1:val},{elm1:val, elm2:val}]},{elm1:[{elm1:val}],elm2:12}]}");
+        walker = new DataMapWalker(data);
+        walker.remove("array.elm1.elm1");
+        assertEquals(new DataMap("{key:1, array:[{elm1:[{}]},{elm1:[{},{elm2:val}]},{elm1:[{}],elm2:12}]}"), walker.getRecord());
+    }
+    
 }
