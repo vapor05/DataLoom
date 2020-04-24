@@ -5,6 +5,7 @@ import com.vapor05.dataloom.databus.DataMap;
 import com.vapor05.dataloom.databus.DataMapException;
 import com.vapor05.dataloom.databus.exporter.CSVExporter;
 import com.vapor05.dataloom.databus.exporter.Exporter;
+import com.vapor05.dataloom.databus.exporter.JSONExporter;
 import com.vapor05.dataloom.generator.AbstractParentGenerator;
 import com.vapor05.dataloom.generator.Generator;
 import com.vapor05.dataloom.json.JSONTokener;
@@ -22,6 +23,7 @@ import java.io.PrintStream;
  */
 public class GenerateFileCommand implements Command {
     public static final String CSV_FILE_TYPE = "CSV";
+    public static final String JSON_FILE_TYPE = "JSON";
     
     private String fileType;
     private DataMap config;
@@ -65,7 +67,7 @@ public class GenerateFileCommand implements Command {
         return "Generate a file of randomized data using the provided configuration json file.\n" +
             "       Usage:\n" +
             "           file <type> <config file> <records> <output file> <seed>\n" +
-            "               <type>: File type to create, accepted values are: csv\n" +
+            "               <type>: File type to create, accepted values are: csv, json\n" +
             "               <config file>:  Full filepath to the configuration json file\n" +
             "               <records>:      Number of records to generate\n" +
             "               <output file>:  Full filepath for the file to generate\n" +
@@ -170,6 +172,7 @@ public class GenerateFileCommand implements Command {
         for (int i = 0; i < columns.length; i++) columns[i] = columnList.getString(i);
         
         if (fileType.equals(CSV_FILE_TYPE)) return new CSVExporter(out, columns, columns);
+        if (fileType.equals(JSON_FILE_TYPE)) return new JSONExporter(out);
         
         throw new DataLoomException("No exporter could be created");
     }

@@ -32,6 +32,18 @@ public class GenerateFileCommandTest {
         assertEquals("Loading Generators...\nLoaded 0 Generators\nLoading Transformers...\n"
                 + "Loaded 0 Transformers\nGenerating records...\nWrote 0 to file target/generateFile/csvTest.csv\n",
                     outTest.toString());
+        
+        args[0] = "json";
+        args[3] = "target/generateFile/jsonTest.json";
+        outTest = new ByteArrayOutputStream();
+        test = new File("target/generateFile/jsonTest.json");
+        generateFile.setParameters(args);
+        generateFile.setPrintStream(new PrintStream(outTest));
+        generateFile.execute();
+        assertTrue(test.exists());
+        assertEquals("Loading Generators...\nLoaded 0 Generators\nLoading Transformers...\n"
+                + "Loaded 0 Transformers\nGenerating records...\nWrote 0 to file target/generateFile/jsonTest.json\n",
+                    outTest.toString());
     }
     
     @Test
@@ -42,7 +54,7 @@ public class GenerateFileCommandTest {
         assertEquals("Generate a file of randomized data using the provided configuration json file.\n" +
             "       Usage:\n" +
             "           file <type> <config file> <records> <output file> <seed>\n" +
-            "               <type>: File type to create, accepted values are: csv\n" +
+            "               <type>: File type to create, accepted values are: csv, json\n" +
             "               <config file>:  Full filepath to the configuration json file\n" +
             "               <records>:      Number of records to generate\n" +
             "               <output file>:  Full filepath for the file to generate\n" +
