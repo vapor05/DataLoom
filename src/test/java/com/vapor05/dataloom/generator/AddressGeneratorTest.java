@@ -37,7 +37,7 @@ public class AddressGeneratorTest {
         start = System.nanoTime();
         generator.generate(timeData);
         elapsed = System.nanoTime() - start;
-        System.out.println("Execution time (ms): " + elapsed/(float)1000000);
+        System.out.println("AddressGenerator execution time (ms): " + elapsed/(float)1000000);
     }
     
 }

@@ -11,7 +11,8 @@ import java.io.PrintStream;
 public class HelpCommand implements Command {
 
     private final Command[] commands = new Command[] { 
-            new GenerateFileCommand()
+            new GenerateFileCommand(),
+            new GeneratePersonCommand()
         };
     private PrintStream out;
     String name = "help";
@@ -39,7 +40,7 @@ public class HelpCommand implements Command {
     {
         StringBuilder commandList = new StringBuilder();
         
-        for (Command command : commands) commandList.append(command.getName() + "\n\t\t");
+        for (Command command : commands) commandList.append(command.getName() + "\n           ");
         
         return "Get help on how to interact with DataLoom CLI.\n" +
             "   Usage: \n" +

@@ -39,7 +39,8 @@ public class HelpCommandTest {
             "       help <command>\n" +
             "           See how to use the listed command\n" +
             "           All possible commands:\n\n" +
-            "           file", help.getHelp());
+            "           file\n" +
+            "           person", help.getHelp());
     }
     
     @Test
@@ -71,7 +72,20 @@ public class HelpCommandTest {
             "       help <command>\n" +
             "           See how to use the listed command\n" +
             "           All possible commands:\n\n" +
-            "           file\n", outTest.toString());
+            "           file\n" +
+            "           person\n", outTest.toString());
+        
+        outTest = new ByteArrayOutputStream();
+        help.setParameters(new String[]{"person"});
+        help.setPrintStream(new PrintStream(outTest));
+        help.execute();
+        assertEquals("Generate randomized person information.\n" +
+            "       Usage:\n" +
+            "           person <seed> [output File]\n" +
+            "               <seed>: An integer value to seed the data generation. The same seed value will produce the same data output.\n" +
+            "           Optional:\n" +
+            "               [output file]:  Full filepath for person data to be written to.\n",
+                outTest.toString());
     }
     
 }

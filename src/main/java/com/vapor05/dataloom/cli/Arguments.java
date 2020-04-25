@@ -10,7 +10,8 @@ public class Arguments {
     private String[] parameters;
     private final Command[] commands = new Command[] { 
             new HelpCommand(),
-            new GenerateFileCommand()
+            new GenerateFileCommand(),
+            new GeneratePersonCommand()
         };
     private Command command;
         

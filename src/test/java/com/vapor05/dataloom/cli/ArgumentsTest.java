@@ -29,6 +29,15 @@ public class ArgumentsTest {
         expected = new String[]{"csv", "src/test/resources/generate_file/test_config.json", "125", "/test/path/outfile.csv", "123456789"};
         
         for (int i=0; i<arguments.getParameters().length; i++) assertEquals(expected[i], arguments.getParameters()[i]);
+        
+        args = new String[]{"person", "123456789"};
+        arguments = new Arguments(args);
+        arguments.parse();
+        assertEquals(1, arguments.getParameters().length);
+        assertTrue(arguments.getCommand() instanceof GeneratePersonCommand);
+        expected = new String[]{"123456789"};
+        
+        for (int i=0; i<arguments.getParameters().length; i++) assertEquals(expected[i], arguments.getParameters()[i]);
     }
     
 }
