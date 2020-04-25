@@ -34,6 +34,12 @@ public class FirstnameGenerator extends AbstractGenerator {
         source = new DataMap(new JSONTokener(getClass().getResourceAsStream("/config/firstnames.json")));
     }
     
+    public FirstnameGenerator(String key)
+    {
+        this();
+        this.key = key;
+    }
+    
     @Override
     public DataMap generate(DataMap record) throws DataMapException
     {

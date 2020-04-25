@@ -19,6 +19,13 @@ public class DateGenerator extends AbstractGenerator {
         earliest = -2208967200000L; // 1900/1/1
         latest = 2556079200000L; // 2050/12/31
     }
+    
+    public DateGenerator(String key, long earliest, long latest)
+    {
+        this.key = key;
+        this.earliest = earliest;
+        this.latest = latest;
+    }
 
     public void setMinKey(String minKey)
     {

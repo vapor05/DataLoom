@@ -22,6 +22,14 @@ public class AddressGenerator extends AbstractParentGenerator {
         cityzip = new CityZipGenerator("city", "zip", "state");
         street = new StreetGenerator("street");
     }
+    
+    public AddressGenerator(String key, String state, String city, String zip, String street) throws DataMapException
+    {
+        this.key = key;
+        this.state = new StateGenerator(state);
+        this.cityzip = new CityZipGenerator(city, zip, state);
+        this.street = new StreetGenerator(street);
+    }
 
     public void setLocalization(String localization)
     {
@@ -59,7 +67,7 @@ public class AddressGenerator extends AbstractParentGenerator {
         record.put(state.getKey(), address.getString(state.getKey()));
         record.put(cityzip.getKey(), address.getString(cityzip.getKey()));
         record.put(cityzip.getZipKey(), address.getString(cityzip.getZipKey()));
-        
+
         return record;
     }
 

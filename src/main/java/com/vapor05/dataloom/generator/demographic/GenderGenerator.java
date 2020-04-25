@@ -13,6 +13,13 @@ public class GenderGenerator extends AbstractGenerator {
     private double split = 0.49;
     private double unknown = 0.01;
     
+    public GenderGenerator() {}
+    
+    public GenderGenerator(String key)
+    {
+        this.key = key;
+    }
+    
     public void setSplit(double split)
     {
         this.split = split;
@@ -22,7 +29,6 @@ public class GenderGenerator extends AbstractGenerator {
     {
         this.unknown = unknown;
     }
- 
     
     @Override
     public DataMap generate(DataMap record) throws DataMapException
