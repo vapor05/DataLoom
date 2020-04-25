@@ -18,8 +18,14 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 /**
- *
- * @author NicholasBocchini
+ * Generates a file of random but reproducible data with the parameters provided by
+ * the user. 
+ * 
+ * The {@code GenerateFileCommand} reads a provided configuration json file to determine
+ * which generators and transforms to run to produce generated data. This generated 
+ * data is then write to a file destination as specified by the user
+ * 
+ * @since v0.2.0
  */
 public class GenerateFileCommand implements Command {
     public static final String CSV_FILE_TYPE = "CSV";

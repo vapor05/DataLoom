@@ -3,8 +3,10 @@ package com.vapor05.dataloom.cli;
 import java.io.PrintStream;
 
 /**
- *
- * @author NicholasBocchini
+ * Returns help messages to the user to provide information on how to properly use
+ * the DataLoom application.
+ * 
+ * @since v0.1.0
  */
 public class HelpCommand implements Command {
 
