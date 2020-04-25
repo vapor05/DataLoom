@@ -1,5 +1,6 @@
 package com.vapor05.dataloom.databus;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
@@ -42,5 +43,36 @@ public class DataMapTest {
         data1 = new DataMap();
         data2 = new DataMap();
         assertTrue(data1.equals(data2));
+    }
+    
+    @Test 
+    public void testPrintJSON()
+    {
+        DataMap data = new DataMap("{key1:data1, key2:123, key3:{innerKey:innerValue, innerMap:{key:value}}, key4:[4,5,6,{key:value,array:[7,8]}]}");
+        StringBuilder result = new StringBuilder();
+        String json;
+
+        json = data.printJSON();
+        assertEquals("{\n\"key1\": \"data1\",\n"
+                + "\"key2\": 123,\n"
+                + "\"key3\": {\n"
+                + "    \"innerMap\": {\n"
+                + "        \"key\": \"value\"\n"
+                + "    },\n"
+                + "    \"innerKey\": \"innerValue\"\n"
+                + "},\n"
+                + "\"key4\": [\n"
+                + "    4,\n"
+                + "    5,\n"
+                + "    6,\n"
+                + "    {\n"
+                + "        \"array\": [\n"
+                + "            7,\n"
+                + "            8\n"
+                + "        ],\n"
+                + "        \"key\": \"value\"\n"
+                + "    }\n"
+                + "]\n}", json);
+      
     }
 }
