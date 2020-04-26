@@ -1,0 +1,89 @@
+{
+    "under18": [
+        {
+            
+        }
+    ],
+    "over18": [
+        {
+            "code": "None",
+            "start": 0.0,
+            "end": 0.0033
+        },
+        {
+            "code": "1st-4th grade",
+            "start": 0.0033,
+            "end": 0.0092
+        },
+        {
+            "code": "5th-6th grade",
+            "start": 0.0092,
+            "end": 0.0218
+        },
+        {
+            "code": "7th-8th grade",
+            "start": 0.0218,
+            "end": 0.0354
+        },
+        {
+            "code": "7th-8th grade",
+            "start": 0.0354,
+            "end": 0.049
+        },
+        {
+            "code": "9th grade",
+            "start": 0.049,
+            "end": 0.0634
+        },
+        {
+            "code": "10th grade",
+            "start": 0.0634,
+            "end": 0.0792
+        },
+        {
+            "code": "11th grade",
+            "start": 0.0792,
+            "end": 0.1192
+        },
+        {
+            "code": "High school graduate",
+            "start": 0.1192,
+            "end": 0.4024
+        },
+        {
+            "code": "Some college, no degree",
+            "start": 0.4024,
+            "end": 0.5821
+        },
+        {
+            "code": "Associate's degree, occupational",
+            "start": 0.5821,
+            "end": 0.6235
+        },
+        {
+            "code": "Associate's degree, academic",
+            "start": 0.6235,
+            "end": 0.68
+        },
+        {
+            "code": "Bachelor's degree",
+            "start": 0.68,
+            "end": 0.8928
+        },
+        {
+            "code": "Master's degree",
+            "start": 0.8928,
+            "end": 0.9824
+        },
+        {
+            "code": "Professional degree",
+            "start": 0.9824,
+            "end": 0.9920
+        },
+        {
+            "code": "Doctoral degree",
+            "start": 0.9920,
+            "end": 1
+        }
+    ]
+}
