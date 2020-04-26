@@ -18,6 +18,7 @@ public class PersonGenerator extends AbstractParentGenerator  {
     private LastnameGenerator lastname;
     private DateGenerator birthDate;
     private AddressGenerator address;
+    private EducationGenerator education;
     
     public PersonGenerator() throws DataMapException
     {
@@ -26,6 +27,7 @@ public class PersonGenerator extends AbstractParentGenerator  {
         lastname = new LastnameGenerator("lastname");
         birthDate = new DateGenerator("birthDate", -1262282400000L, new Date().getTime());
         address = new AddressGenerator("address", "state", "city", "zip", "street");
+        education = new EducationGenerator("education", "birthDate");
     }
 
     public void setGender(GenderGenerator gender)
@@ -52,6 +54,11 @@ public class PersonGenerator extends AbstractParentGenerator  {
     {
         this.address = address;
     }
+
+    public void setEducation(EducationGenerator education)
+    {
+        this.education = education;
+    }
     
     @Override
     public DataMap generate(DataMap record) throws DataMapException
@@ -61,6 +68,7 @@ public class PersonGenerator extends AbstractParentGenerator  {
         record = lastname.generate(record);
         record = birthDate.generate(record);
         record = address.generate(record);
+        record = education.generate(record);
         
         return record;
     }
@@ -74,6 +82,7 @@ public class PersonGenerator extends AbstractParentGenerator  {
         birthDate.setSeed(seed);
         address.setSeed(seed);
         address.setChildGeneratorsSeed(seed);
+        education.setSeed(seed);
     }
     
 }

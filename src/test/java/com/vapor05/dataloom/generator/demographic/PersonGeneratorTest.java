@@ -35,6 +35,7 @@ public class PersonGeneratorTest {
         assertTrue(data.containsKey("zip"));
         assertTrue(data.containsKey("city"));
         assertTrue(data.containsKey("address"));
+        assertTrue(data.containsKey("education"));
         assertTrue(numPattern.matcher(data.getString("zip")).matches());
         
         assertTimeout(ofMillis(1), () -> {
