@@ -31,10 +31,9 @@ public class EducationGeneratorTest {
         generator.setKey("education");
         generator.setSeed(1L);
         
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < 100000; i++)
         {
-            data = new DataMap();
-            data = generator.generate(data);
+            data = generator.generate(new DataMap());
             assertTrue(data.containsKey("education"));
             assertTrue(codes.contains(data.getString("education")));
         }
