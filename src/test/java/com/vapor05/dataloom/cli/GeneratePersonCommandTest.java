@@ -5,7 +5,6 @@ import com.vapor05.dataloom.json.JSONTokener;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.PrintStream;
 import java.util.regex.Pattern;
 import org.junit.jupiter.api.Test;
@@ -48,10 +47,10 @@ public class GeneratePersonCommandTest {
         Pattern numPattern = Pattern.compile("\\d\\d\\d\\d\\d");
         DataMap data;
         
-        command.setParameters(new String[]{"1"});
+        command.setParameters(new String[]{"3"});
         command.setPrintStream(new PrintStream(outTest));
         command.execute();
-        
+
         data = new DataMap(new JSONTokener(new ByteArrayInputStream(outTest.toByteArray())));
         assertTrue(data.containsKey("gender"));
         assertTrue(data.containsKey("firstname"));
@@ -62,6 +61,8 @@ public class GeneratePersonCommandTest {
         assertTrue(data.getDataMap("location").containsKey("zip"));
         assertTrue(data.getDataMap("location").containsKey("city"));
         assertTrue(data.getDataMap("location").containsKey("address"));
+        assertTrue(data.getDataMap("employment").containsKey("jobTitle"));
+        assertTrue(data.getDataMap("employment").containsKey("salary"));
         assertTrue(numPattern.matcher(data.getDataMap("location").getString("zip")).matches());
     }
     

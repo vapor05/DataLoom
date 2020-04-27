@@ -2,7 +2,7 @@ package com.vapor05.dataloom.generator.demographic;
 
 import com.vapor05.dataloom.databus.DataMap;
 import com.vapor05.dataloom.databus.DataMapException;
-import com.vapor05.dataloom.generator.AbstractParentGenerator;
+import com.vapor05.dataloom.generator.AbstractGenerator;
 import com.vapor05.dataloom.generator.AddressGenerator;
 import com.vapor05.dataloom.generator.DateGenerator;
 import java.util.Date;
@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author NicholasBocchini
  */
-public class PersonGenerator extends AbstractParentGenerator  {
+public class PersonGenerator extends AbstractGenerator  {
     
     private GenderGenerator gender;
     private FirstnameGenerator firstname;
@@ -19,6 +19,7 @@ public class PersonGenerator extends AbstractParentGenerator  {
     private DateGenerator birthDate;
     private AddressGenerator address;
     private EducationGenerator education;
+    private EmploymentGenerator employment;
     
     public PersonGenerator() throws DataMapException
     {
@@ -28,6 +29,7 @@ public class PersonGenerator extends AbstractParentGenerator  {
         birthDate = new DateGenerator("birthDate", -1262282400000L, new Date().getTime());
         address = new AddressGenerator("address", "state", "city", "zip", "street");
         education = new EducationGenerator("education", "birthDate");
+        employment = new EmploymentGenerator("jobTitle", "salary", "birthDate");
     }
 
     public void setGender(GenderGenerator gender)
@@ -59,6 +61,11 @@ public class PersonGenerator extends AbstractParentGenerator  {
     {
         this.education = education;
     }
+
+    public void setEmployment(EmploymentGenerator employment)
+    {
+        this.employment = employment;
+    }
     
     @Override
     public DataMap generate(DataMap record) throws DataMapException
@@ -69,12 +76,13 @@ public class PersonGenerator extends AbstractParentGenerator  {
         record = birthDate.generate(record);
         record = address.generate(record);
         record = education.generate(record);
+        record = employment.generate(record);
         
         return record;
     }
 
     @Override
-    public void setChildGeneratorsSeed(long seed)
+    public void setSeed(long seed)
     {
         gender.setSeed(seed);
         firstname.setSeed(seed);
@@ -83,6 +91,7 @@ public class PersonGenerator extends AbstractParentGenerator  {
         address.setSeed(seed);
         address.setChildGeneratorsSeed(seed);
         education.setSeed(seed);
+        employment.setSeed(seed);
     }
     
 }

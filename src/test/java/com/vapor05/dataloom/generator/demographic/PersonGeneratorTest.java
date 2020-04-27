@@ -23,9 +23,8 @@ public class PersonGeneratorTest {
         long start;
         long elapsed;
         
-        generator.setSeed(1L);
+        generator.setSeed(12L);
         generator.setKey("person");
-        generator.setChildGeneratorsSeed(1L);
         data = generator.generate(data);
         assertTrue(data.containsKey("gender"));
         assertTrue(data.containsKey("firstname"));
@@ -36,6 +35,8 @@ public class PersonGeneratorTest {
         assertTrue(data.containsKey("city"));
         assertTrue(data.containsKey("address"));
         assertTrue(data.containsKey("education"));
+        assertTrue(data.containsKey("jobTitle"));
+        assertTrue(data.containsKey("salary"));
         assertTrue(numPattern.matcher(data.getString("zip")).matches());
         
         assertTimeout(ofMillis(1), () -> {

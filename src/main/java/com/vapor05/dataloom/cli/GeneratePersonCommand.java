@@ -59,7 +59,6 @@ public class GeneratePersonCommand implements Command {
         JSONExporter writer;
         
         generator.setSeed(seed);
-        generator.setChildGeneratorsSeed(seed+10L);
         person = generator.generate(person);
         moveKey.setSourceKey("state");
         moveKey.setDestinationKey("location.state");
@@ -73,6 +72,16 @@ public class GeneratePersonCommand implements Command {
         moveKey.setSourceKey("address");
         moveKey.setDestinationKey("location.address");
         person = moveKey.transform(person);
+        
+        if (person.containsKey("jobTitle"))
+        {
+            moveKey.setSourceKey("jobTitle");
+            moveKey.setDestinationKey("employment.jobTitle");
+            person = moveKey.transform(person);
+            moveKey.setSourceKey("salary");
+            moveKey.setDestinationKey("employment.salary");
+            person = moveKey.transform(person);
+        }
         
         if (outFile == null) 
         {
