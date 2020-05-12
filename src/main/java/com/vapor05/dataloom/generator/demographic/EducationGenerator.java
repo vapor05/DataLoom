@@ -66,6 +66,10 @@ public class EducationGenerator extends AbstractGenerator {
                 }
             }
         }
+        else if (age >= 8)
+        {
+            record.put(key, "Student");
+        }
         
         return record;
     }

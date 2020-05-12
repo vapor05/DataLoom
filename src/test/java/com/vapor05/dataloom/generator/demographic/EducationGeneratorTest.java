@@ -4,6 +4,7 @@ import com.vapor05.dataloom.databus.DataArray;
 import com.vapor05.dataloom.databus.DataMap;
 import com.vapor05.dataloom.json.JSONTokener;
 import static java.time.Duration.ofMillis;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTimeout;
 import org.junit.jupiter.api.Test;
@@ -48,7 +49,8 @@ public class EducationGeneratorTest {
         assertTrue(codes.contains(data.getString("education")));
         data = new DataMap("{dob:1262325600000}"); //10years old
         data = generator.generate(data);
-        assertFalse(data.containsKey("education"));
+        assertTrue(data.containsKey("education"));
+        assertEquals("Student", data.getString("education"));
         data = new DataMap("{dob:473407200000}"); //35years old
         data = generator.generate(data);
         assertTrue(data.containsKey("education"));
