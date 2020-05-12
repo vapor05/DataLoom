@@ -33,6 +33,23 @@ public class DateFormatTransformer implements Transformer {
         this.timezone = timezone;
     }
 
+    public DataMap transform(String key, String format, String timezone, DataMap record) throws DataMapException
+    {
+        String origKey = this.key;
+        String origFormat = this.format;
+        String origTimezone = this.timezone;
+        
+        this.key = key;
+        this.format = format;
+        this.timezone = timezone;
+        transform(record);
+        this.key = origKey;
+        this.format = origFormat;
+        this.timezone = origTimezone;
+        
+        return record;
+    }
+    
     @Override
     public DataMap transform(DataMap record) throws DataMapException
     {

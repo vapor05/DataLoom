@@ -23,6 +23,20 @@ public class MoveKeyTransformer implements Transformer {
     {
         this.destinationKey = destinationKey;
     }
+    
+    public DataMap transform(String sourceKey, String destinationKey, DataMap record) throws DataMapException
+    {
+        String origSourceKey = this.sourceKey;
+        String orgDestKey = this.destinationKey;
+        
+        this.sourceKey = sourceKey;
+        this.destinationKey = destinationKey;
+        transform(record);
+        this.sourceKey = origSourceKey;
+        this.destinationKey = orgDestKey;
+        
+        return record;
+    }
 
     @Override
     public DataMap transform(DataMap record) throws DataMapException
