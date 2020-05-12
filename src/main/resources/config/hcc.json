@@ -1,0 +1,898 @@
+[
+    {
+        "HCC": "1",
+        "Override_HCC": null,
+        "Description": "HIV/AIDS",
+        "start": 0,
+        "end": 0.0078125
+    },
+    {
+        "HCC": "2",
+        "Override_HCC": null,
+        "Description": "Septicemia, Sepsis, Systemic Inflammatory Response Syndrome/Shock",
+        "start": 0.0078125,
+        "end": 0.015625
+    },
+    {
+        "HCC": "3",
+        "Override_HCC": "4",
+        "Description": "Central Nervous System Infections, Except Viral Meningitis",
+        "start": 0.015625,
+        "end": 0.0234375
+    },
+    {
+        "HCC": "4",
+        "Override_HCC": null,
+        "Description": "Viral or Unspecified Meningitis",
+        "start": 0.0234375,
+        "end": 0.03125
+    },
+    {
+        "HCC": "6",
+        "Override_HCC": null,
+        "Description": "Opportunistic Infections",
+        "start": 0.03125,
+        "end": 0.0390625
+    },
+    {
+        "HCC": "8",
+        "Override_HCC": "9 ,10 ,11 ,12 ,13",
+        "Description": "Metastatic Cancer",
+        "start": 0.0390625,
+        "end": 0.046875
+    },
+    {
+        "HCC": "9",
+        "Override_HCC": "10 ,11 ,12 ,13",
+        "Description": "Lung, Brain, and Other Severe Cancers, Including Pediatric Acute Lymphoid Leukemia",
+        "start": 0.046875,
+        "end": 0.0546875
+    },
+    {
+        "HCC": "10",
+        "Override_HCC": "11 ,12 ,13",
+        "Description": "Non-Hodgkin's Lymphomas and Other Cancers and Tumors",
+        "start": 0.0546875,
+        "end": 0.0625
+    },
+    {
+        "HCC": "11",
+        "Override_HCC": "12 ,13",
+        "Description": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+        "start": 0.0625,
+        "end": 0.0703125
+    },
+    {
+        "HCC": "12",
+        "Override_HCC": "13",
+        "Description": "Breast (Age 50+) and Prostate Cancer, Benign/Uncertain Brain Tumors, and Other Cancers and Tumors",
+        "start": 0.0703125,
+        "end": 0.078125
+    },
+    {
+        "HCC": "13",
+        "Override_HCC": null,
+        "Description": "Thyroid Cancer, Melanoma, Neurofibromatosis, and Other Cancers and Tumors",
+        "start": 0.078125,
+        "end": 0.0859375
+    },
+    {
+        "HCC": "18",
+        "Override_HCC": "19 ,20 ,21 ,46 ,47",
+        "Description": "Pancreas Transplant Status/Complications",
+        "start": 0.0859375,
+        "end": 0.09375
+    },
+    {
+        "HCC": "19",
+        "Override_HCC": "20 ,21",
+        "Description": "Diabetes with Acute Complications",
+        "start": 0.09375,
+        "end": 0.1015625
+    },
+    {
+        "HCC": "20",
+        "Override_HCC": "21",
+        "Description": "Diabetes with Chronic Complications",
+        "start": 0.1015625,
+        "end": 0.109375
+    },
+    {
+        "HCC": "21",
+        "Override_HCC": null,
+        "Description": "Diabetes without Complication",
+        "start": 0.109375,
+        "end": 0.1171875
+    },
+    {
+        "HCC": "23",
+        "Override_HCC": null,
+        "Description": "Protein-Calorie Malnutrition",
+        "start": 0.1171875,
+        "end": 0.125
+    },
+    {
+        "HCC": "26",
+        "Override_HCC": null,
+        "Description": "Mucopolysaccharidosis",
+        "start": 0.125,
+        "end": 0.1328125
+    },
+    {
+        "HCC": "27",
+        "Override_HCC": null,
+        "Description": "Lipidoses and Glycogenosis",
+        "start": 0.1328125,
+        "end": 0.140625
+    },
+    {
+        "HCC": "28",
+        "Override_HCC": null,
+        "Description": "Congenital Metabolic Disorders, Not Elsewhere Classified",
+        "start": 0.140625,
+        "end": 0.1484375
+    },
+    {
+        "HCC": "29",
+        "Override_HCC": null,
+        "Description": "Amyloidosis, Porphyria, and Other Metabolic Disorders",
+        "start": 0.1484375,
+        "end": 0.15625
+    },
+    {
+        "HCC": "30",
+        "Override_HCC": null,
+        "Description": "Adrenal, Pituitary, and Other Significant Endocrine Disorders",
+        "start": 0.15625,
+        "end": 0.1640625
+    },
+    {
+        "HCC": "34",
+        "Override_HCC": "35 ,36 ,37_1 ,37_2 ,38",
+        "Description": "Liver Transplant Status/Complications",
+        "start": 0.1640625,
+        "end": 0.171875
+    },
+    {
+        "HCC": "35",
+        "Override_HCC": "36 ,37_1 ,37_2 ,38",
+        "Description": "End-Stage Liver Disease",
+        "start": 0.171875,
+        "end": 0.1796875
+    },
+    {
+        "HCC": "36",
+        "Override_HCC": "37_1 ,37_2",
+        "Description": "Cirrhosis of Liver",
+        "start": 0.1796875,
+        "end": 0.1875
+    },
+    {
+        "HCC": "37_1",
+        "Override_HCC": "37_2",
+        "Description": "Chronic Viral Hepatitis C",
+        "start": 0.1875,
+        "end": 0.1953125
+    },
+    {
+        "HCC": "37_2",
+        "Override_HCC": null,
+        "Description": "Chronic Hepatitis, Except Chronic Viral Hepatitis C",
+        "start": 0.1953125,
+        "end": 0.203125
+    },
+    {
+        "HCC": "38",
+        "Override_HCC": null,
+        "Description": "Acute Liver Failure/Disease, Including Neonatal Hepatitis",
+        "start": 0.203125,
+        "end": 0.2109375
+    },
+    {
+        "HCC": "41",
+        "Override_HCC": "45 ,48",
+        "Description": "Intestine Transplant Status/Complications",
+        "start": 0.2109375,
+        "end": 0.21875
+    },
+    {
+        "HCC": "42",
+        "Override_HCC": "45",
+        "Description": "Peritonitis/Gastrointestinal Perforation/Necrotizing Enterocolitis",
+        "start": 0.21875,
+        "end": 0.2265625
+    },
+    {
+        "HCC": "45",
+        "Override_HCC": null,
+        "Description": "Intestinal Obstruction",
+        "start": 0.2265625,
+        "end": 0.234375
+    },
+    {
+        "HCC": "46",
+        "Override_HCC": "47",
+        "Description": "Chronic Pancreatitis",
+        "start": 0.234375,
+        "end": 0.2421875
+    },
+    {
+        "HCC": "47",
+        "Override_HCC": null,
+        "Description": "Acute Pancreatitis/Other Pancreatic Disorders and Intestinal Malabsorption",
+        "start": 0.2421875,
+        "end": 0.25
+    },
+    {
+        "HCC": "48",
+        "Override_HCC": null,
+        "Description": "Inflammatory Bowel Disease",
+        "start": 0.25,
+        "end": 0.2578125
+    },
+    {
+        "HCC": "54",
+        "Override_HCC": "55",
+        "Description": "Necrotizing Fasciitis",
+        "start": 0.2578125,
+        "end": 0.265625
+    },
+    {
+        "HCC": "55",
+        "Override_HCC": null,
+        "Description": "Bone/Joint/Muscle Infections/Necrosis",
+        "start": 0.265625,
+        "end": 0.2734375
+    },
+    {
+        "HCC": "56",
+        "Override_HCC": "57",
+        "Description": "Rheumatoid Arthritis and Specified Autoimmune Disorders",
+        "start": 0.2734375,
+        "end": 0.28125
+    },
+    {
+        "HCC": "57",
+        "Override_HCC": null,
+        "Description": "Systemic Lupus Erythematosus and Other Autoimmune Disorders",
+        "start": 0.28125,
+        "end": 0.2890625
+    },
+    {
+        "HCC": "61",
+        "Override_HCC": null,
+        "Description": "Osteogenesis Imperfecta and Other Osteodystrophies",
+        "start": 0.2890625,
+        "end": 0.296875
+    },
+    {
+        "HCC": "62",
+        "Override_HCC": null,
+        "Description": "Congenital/Developmental Skeletal and Connective Tissue Disorders",
+        "start": 0.296875,
+        "end": 0.3046875
+    },
+    {
+        "HCC": "63",
+        "Override_HCC": null,
+        "Description": "Cleft Lip/Cleft Palate",
+        "start": 0.3046875,
+        "end": 0.3125
+    },
+    {
+        "HCC": "64",
+        "Override_HCC": null,
+        "Description": "Major Congenital Anomalies of Diaphragm, Abdominal Wall, and Esophagus, Age < 2",
+        "start": 0.3125,
+        "end": 0.3203125
+    },
+    {
+        "HCC": "66",
+        "Override_HCC": "75",
+        "Description": "Hemophilia",
+        "start": 0.3203125,
+        "end": 0.328125
+    },
+    {
+        "HCC": "67",
+        "Override_HCC": "75",
+        "Description": "Myelodysplastic Syndromes and Myelofibrosis",
+        "start": 0.328125,
+        "end": 0.3359375
+    },
+    {
+        "HCC": "68",
+        "Override_HCC": "69 ,74 ,75",
+        "Description": "Aplastic Anemia",
+        "start": 0.3359375,
+        "end": 0.34375
+    },
+    {
+        "HCC": "69",
+        "Override_HCC": null,
+        "Description": "Acquired Hemolytic Anemia, Including Hemolytic Disease of Newborn",
+        "start": 0.34375,
+        "end": 0.3515625
+    },
+    {
+        "HCC": "70",
+        "Override_HCC": "71",
+        "Description": "Sickle Cell Anemia (Hb-SS)",
+        "start": 0.3515625,
+        "end": 0.359375
+    },
+    {
+        "HCC": "71",
+        "Override_HCC": null,
+        "Description": "Thalassemia Major",
+        "start": 0.359375,
+        "end": 0.3671875
+    },
+    {
+        "HCC": "73",
+        "Override_HCC": "74",
+        "Description": "Combined and Other Severe Immunodeficiencies",
+        "start": 0.3671875,
+        "end": 0.375
+    },
+    {
+        "HCC": "74",
+        "Override_HCC": null,
+        "Description": "Disorders of the Immune Mechanism",
+        "start": 0.375,
+        "end": 0.3828125
+    },
+    {
+        "HCC": "75",
+        "Override_HCC": null,
+        "Description": "Coagulation Defects and Other Specified Hematological Disorders",
+        "start": 0.3828125,
+        "end": 0.390625
+    },
+    {
+        "HCC": "81",
+        "Override_HCC": "82",
+        "Description": "Drug Psychosis",
+        "start": 0.390625,
+        "end": 0.3984375
+    },
+    {
+        "HCC": "82",
+        "Override_HCC": null,
+        "Description": "Drug Dependence",
+        "start": 0.3984375,
+        "end": 0.40625
+    },
+    {
+        "HCC": "87",
+        "Override_HCC": "88 ,89 ,90 ,102 ,103",
+        "Description": "Schizophrenia",
+        "start": 0.40625,
+        "end": 0.4140625
+    },
+    {
+        "HCC": "88",
+        "Override_HCC": "89 ,90 ,102 ,103",
+        "Description": "Major Depressive and Bipolar Disorders",
+        "start": 0.4140625,
+        "end": 0.421875
+    },
+    {
+        "HCC": "89",
+        "Override_HCC": "90 ,102 ,103",
+        "Description": "Reactive and Unspecified Psychosis, Delusional Disorders",
+        "start": 0.421875,
+        "end": 0.4296875
+    },
+    {
+        "HCC": "90",
+        "Override_HCC": null,
+        "Description": "Personality Disorders",
+        "start": 0.4296875,
+        "end": 0.4375
+    },
+    {
+        "HCC": "94",
+        "Override_HCC": null,
+        "Description": "Anorexia/Bulimia Nervosa",
+        "start": 0.4375,
+        "end": 0.4453125
+    },
+    {
+        "HCC": "96",
+        "Override_HCC": "97",
+        "Description": "Prader-Willi, Patau, Edwards, and Autosomal Deletion Syndromes",
+        "start": 0.4453125,
+        "end": 0.453125
+    },
+    {
+        "HCC": "97",
+        "Override_HCC": null,
+        "Description": "Down Syndrome, Fragile X, Other Chromosomal Anomalies, and Congenital Malformation Syndromes",
+        "start": 0.453125,
+        "end": 0.4609375
+    },
+    {
+        "HCC": "102",
+        "Override_HCC": "90 ,103",
+        "Description": "Autistic Disorder",
+        "start": 0.4609375,
+        "end": 0.46875
+    },
+    {
+        "HCC": "103",
+        "Override_HCC": "90",
+        "Description": "Pervasive Developmental Disorders, Except Autistic Disorder",
+        "start": 0.46875,
+        "end": 0.4765625
+    },
+    {
+        "HCC": "106",
+        "Override_HCC": "107 ,108 ,109 ,110 ,150 ,151",
+        "Description": "Traumatic Complete Lesion Cervical Spinal Cord",
+        "start": 0.4765625,
+        "end": 0.484375
+    },
+    {
+        "HCC": "107",
+        "Override_HCC": "109 ,110 ,150 ,151",
+        "Description": "Quadriplegia",
+        "start": 0.484375,
+        "end": 0.4921875
+    },
+    {
+        "HCC": "108",
+        "Override_HCC": "109 ,110 ,151",
+        "Description": "Traumatic Complete Lesion Dorsal Spinal Cord",
+        "start": 0.4921875,
+        "end": 0.5
+    },
+    {
+        "HCC": "109",
+        "Override_HCC": "110 ,151",
+        "Description": "Paraplegia",
+        "start": 0.5,
+        "end": 0.5078125
+    },
+    {
+        "HCC": "110",
+        "Override_HCC": null,
+        "Description": "Spinal Cord Disorders/Injuries",
+        "start": 0.5078125,
+        "end": 0.515625
+    },
+    {
+        "HCC": "111",
+        "Override_HCC": null,
+        "Description": "Amyotrophic Lateral Sclerosis and Other Anterior Horn Cell Disease",
+        "start": 0.515625,
+        "end": 0.5234375
+    },
+    {
+        "HCC": "112",
+        "Override_HCC": "113",
+        "Description": "Quadriplegic Cerebral Palsy",
+        "start": 0.5234375,
+        "end": 0.53125
+    },
+    {
+        "HCC": "113",
+        "Override_HCC": null,
+        "Description": "Cerebral Palsy, Except Quadriplegic",
+        "start": 0.53125,
+        "end": 0.5390625
+    },
+    {
+        "HCC": "114",
+        "Override_HCC": null,
+        "Description": "Spina Bifida and Other Brain/Spinal/Nervous System Congenital Anomalies",
+        "start": 0.5390625,
+        "end": 0.546875
+    },
+    {
+        "HCC": "115",
+        "Override_HCC": null,
+        "Description": "Myasthenia Gravis/Myoneural Disorders and Guillain-Barre Syndrome/Inflammatory and Toxic Neuropathy",
+        "start": 0.546875,
+        "end": 0.5546875
+    },
+    {
+        "HCC": "117",
+        "Override_HCC": null,
+        "Description": "Muscular Dystrophy",
+        "start": 0.5546875,
+        "end": 0.5625
+    },
+    {
+        "HCC": "118",
+        "Override_HCC": null,
+        "Description": "Multiple Sclerosis",
+        "start": 0.5625,
+        "end": 0.5703125
+    },
+    {
+        "HCC": "119",
+        "Override_HCC": null,
+        "Description": "Parkinson's, Huntington's, and Spinocerebellar Disease, and Other Neurodegenerative Disorders",
+        "start": 0.5703125,
+        "end": 0.578125
+    },
+    {
+        "HCC": "120",
+        "Override_HCC": null,
+        "Description": "Seizure Disorders and Convulsions",
+        "start": 0.578125,
+        "end": 0.5859375
+    },
+    {
+        "HCC": "121",
+        "Override_HCC": null,
+        "Description": "Hydrocephalus",
+        "start": 0.5859375,
+        "end": 0.59375
+    },
+    {
+        "HCC": "122",
+        "Override_HCC": null,
+        "Description": "Non-Traumatic Coma, Brain Compression/Anoxic Damage",
+        "start": 0.59375,
+        "end": 0.6015625
+    },
+    {
+        "HCC": "125",
+        "Override_HCC": "126 ,127",
+        "Description": "Respirator Dependence/Tracheostomy Status",
+        "start": 0.6015625,
+        "end": 0.609375
+    },
+    {
+        "HCC": "126",
+        "Override_HCC": "127",
+        "Description": "Respiratory Arrest",
+        "start": 0.609375,
+        "end": 0.6171875
+    },
+    {
+        "HCC": "127",
+        "Override_HCC": null,
+        "Description": "Cardio-Respiratory Failure and Shock, Including Respiratory Distress Syndromes",
+        "start": 0.6171875,
+        "end": 0.625
+    },
+    {
+        "HCC": "128",
+        "Override_HCC": "129 ,130",
+        "Description": "Heart Assistive Device/Artificial Heart",
+        "start": 0.625,
+        "end": 0.6328125
+    },
+    {
+        "HCC": "129",
+        "Override_HCC": "130",
+        "Description": "Heart Transplant",
+        "start": 0.6328125,
+        "end": 0.640625
+    },
+    {
+        "HCC": "130",
+        "Override_HCC": null,
+        "Description": "Congestive Heart Failure",
+        "start": 0.640625,
+        "end": 0.6484375
+    },
+    {
+        "HCC": "131",
+        "Override_HCC": "132",
+        "Description": "Acute Myocardial Infarction",
+        "start": 0.6484375,
+        "end": 0.65625
+    },
+    {
+        "HCC": "132",
+        "Override_HCC": null,
+        "Description": "Unstable Angina and Other Acute Ischemic Heart Disease",
+        "start": 0.65625,
+        "end": 0.6640625
+    },
+    {
+        "HCC": "135",
+        "Override_HCC": null,
+        "Description": "Heart Infection/Inflammation, Except Rheumatic",
+        "start": 0.6640625,
+        "end": 0.671875
+    },
+    {
+        "HCC": "137",
+        "Override_HCC": "138 ,139",
+        "Description": "Hypoplastic Left Heart Syndrome and Other Severe Congenital Heart Disorders",
+        "start": 0.671875,
+        "end": 0.6796875
+    },
+    {
+        "HCC": "138",
+        "Override_HCC": "139",
+        "Description": "Major Congenital Heart/Circulatory Disorders",
+        "start": 0.6796875,
+        "end": 0.6875
+    },
+    {
+        "HCC": "139",
+        "Override_HCC": null,
+        "Description": "Atrial and Ventricular Septal Defects, Patent Ductus Arteriosus, and Other Congenital Heart/Circulatory Disorders",
+        "start": 0.6875,
+        "end": 0.6953125
+    },
+    {
+        "HCC": "142",
+        "Override_HCC": null,
+        "Description": "Specified Heart Arrhythmias",
+        "start": 0.6953125,
+        "end": 0.703125
+    },
+    {
+        "HCC": "145",
+        "Override_HCC": "146 ,149",
+        "Description": "Intracranial Hemorrhage",
+        "start": 0.703125,
+        "end": 0.7109375
+    },
+    {
+        "HCC": "146",
+        "Override_HCC": null,
+        "Description": "Ischemic or Unspecified Stroke",
+        "start": 0.7109375,
+        "end": 0.71875
+    },
+    {
+        "HCC": "149",
+        "Override_HCC": null,
+        "Description": "Cerebral Aneurysm and Arteriovenous Malformation",
+        "start": 0.71875,
+        "end": 0.7265625
+    },
+    {
+        "HCC": "150",
+        "Override_HCC": "151",
+        "Description": "Hemiplegia/Hemiparesis",
+        "start": 0.7265625,
+        "end": 0.734375
+    },
+    {
+        "HCC": "151",
+        "Override_HCC": null,
+        "Description": "Monoplegia, Other Paralytic Syndromes",
+        "start": 0.734375,
+        "end": 0.7421875
+    },
+    {
+        "HCC": "153",
+        "Override_HCC": "217 ,254",
+        "Description": "Atherosclerosis of the Extremities with Ulceration or Gangrene",
+        "start": 0.7421875,
+        "end": 0.75
+    },
+    {
+        "HCC": "154",
+        "Override_HCC": null,
+        "Description": "Vascular Disease with Complications",
+        "start": 0.75,
+        "end": 0.7578125
+    },
+    {
+        "HCC": "156",
+        "Override_HCC": null,
+        "Description": "Pulmonary Embolism and Deep Vein Thrombosis",
+        "start": 0.7578125,
+        "end": 0.765625
+    },
+    {
+        "HCC": "158",
+        "Override_HCC": "159 ,160 ,161 ,162",
+        "Description": "Lung Transplant Status/Complications",
+        "start": 0.765625,
+        "end": 0.7734375
+    },
+    {
+        "HCC": "159",
+        "Override_HCC": "160 ,161",
+        "Description": "Cystic Fibrosis",
+        "start": 0.7734375,
+        "end": 0.78125
+    },
+    {
+        "HCC": "160",
+        "Override_HCC": "161",
+        "Description": "Chronic Obstructive Pulmonary Disease, Including Bronchiectasis",
+        "start": 0.78125,
+        "end": 0.7890625
+    },
+    {
+        "HCC": "161",
+        "Override_HCC": null,
+        "Description": "Asthma",
+        "start": 0.7890625,
+        "end": 0.796875
+    },
+    {
+        "HCC": "162",
+        "Override_HCC": "161",
+        "Description": "Fibrosis of Lung and Other Lung Disorders",
+        "start": 0.796875,
+        "end": 0.8046875
+    },
+    {
+        "HCC": "163",
+        "Override_HCC": null,
+        "Description": "Aspiration and Specified Bacterial Pneumonias and Other Severe Lung Infections",
+        "start": 0.8046875,
+        "end": 0.8125
+    },
+    {
+        "HCC": "183",
+        "Override_HCC": "184 ,187 ,188",
+        "Description": "Kidney Transplant Status",
+        "start": 0.8125,
+        "end": 0.8203125
+    },
+    {
+        "HCC": "184",
+        "Override_HCC": "187 ,188",
+        "Description": "End Stage Renal Disease",
+        "start": 0.8203125,
+        "end": 0.828125
+    },
+    {
+        "HCC": "187",
+        "Override_HCC": "188",
+        "Description": "Chronic Kidney Disease, Stage 5",
+        "start": 0.828125,
+        "end": 0.8359375
+    },
+    {
+        "HCC": "188",
+        "Override_HCC": null,
+        "Description": "Chronic Kidney Disease, Severe (Stage 4)",
+        "start": 0.8359375,
+        "end": 0.84375
+    },
+    {
+        "HCC": "203",
+        "Override_HCC": "204 ,205",
+        "Description": "Ectopic and Molar Pregnancy, Except with Renal Failure, Shock, or Embolism",
+        "start": 0.84375,
+        "end": 0.8515625
+    },
+    {
+        "HCC": "204",
+        "Override_HCC": "205",
+        "Description": "Miscarriage with Complications",
+        "start": 0.8515625,
+        "end": 0.859375
+    },
+    {
+        "HCC": "205",
+        "Override_HCC": null,
+        "Description": "Miscarriage with No or Minor Complications",
+        "start": 0.859375,
+        "end": 0.8671875
+    },
+    {
+        "HCC": "207",
+        "Override_HCC": "203 ,204 ,205 ,208 ,209",
+        "Description": "Completed Pregnancy With Major Complications",
+        "start": 0.8671875,
+        "end": 0.875
+    },
+    {
+        "HCC": "208",
+        "Override_HCC": "209",
+        "Description": "Completed Pregnancy With Complications",
+        "start": 0.875,
+        "end": 0.8828125
+    },
+    {
+        "HCC": "209",
+        "Override_HCC": null,
+        "Description": "Completed Pregnancy with No or Minor Complications",
+        "start": 0.8828125,
+        "end": 0.890625
+    },
+    {
+        "HCC": "217",
+        "Override_HCC": null,
+        "Description": "Chronic Ulcer of Skin, Except Pressure",
+        "start": 0.890625,
+        "end": 0.8984375
+    },
+    {
+        "HCC": "226",
+        "Override_HCC": "227",
+        "Description": "Hip Fractures and Pathological Vertebral or Humerus Fractures",
+        "start": 0.8984375,
+        "end": 0.90625
+    },
+    {
+        "HCC": "227",
+        "Override_HCC": null,
+        "Description": "Pathological Fractures, Except of Vertebrae, Hip, or Humerus",
+        "start": 0.90625,
+        "end": 0.9140625
+    },
+    {
+        "HCC": "242",
+        "Override_HCC": "243 ,244 ,245 ,246 ,247 ,248 ,249",
+        "Description": "Extremely Immature Newborns, Birthweight < 500 Grams",
+        "start": 0.9140625,
+        "end": 0.921875
+    },
+    {
+        "HCC": "243",
+        "Override_HCC": "244 ,245 ,246 ,247 ,248 ,249",
+        "Description": "Extremely Immature Newborns, Including Birthweight 500-749 Grams",
+        "start": 0.921875,
+        "end": 0.9296875
+    },
+    {
+        "HCC": "244",
+        "Override_HCC": "245 ,246 ,247 ,248 ,249",
+        "Description": "Extremely Immature Newborns, Including Birthweight 750-999 Grams",
+        "start": 0.9296875,
+        "end": 0.9375
+    },
+    {
+        "HCC": "245",
+        "Override_HCC": "246 ,247 ,248 ,249",
+        "Description": "Premature Newborns, Including Birthweight 1000-1499 Grams",
+        "start": 0.9375,
+        "end": 0.9453125
+    },
+    {
+        "HCC": "246",
+        "Override_HCC": "247 ,248 ,249",
+        "Description": "Premature Newborns, Including Birthweight 1500-1999 Grams",
+        "start": 0.9453125,
+        "end": 0.953125
+    },
+    {
+        "HCC": "247",
+        "Override_HCC": "248 ,249",
+        "Description": "Premature Newborns, Including Birthweight 2000-2499 Grams",
+        "start": 0.953125,
+        "end": 0.9609375
+    },
+    {
+        "HCC": "248",
+        "Override_HCC": "249",
+        "Description": "Other Premature, Low Birthweight, Malnourished, or Multiple Birth Newborns",
+        "start": 0.9609375,
+        "end": 0.96875
+    },
+    {
+        "HCC": "249",
+        "Override_HCC": null,
+        "Description": "Term or Post-Term Singleton Newborn, Normal or High Birthweight",
+        "start": 0.96875,
+        "end": 0.9765625
+    },
+    {
+        "HCC": "251",
+        "Override_HCC": null,
+        "Description": "Stem Cell, Including Bone Marrow, Transplant Status/Complications",
+        "start": 0.9765625,
+        "end": 0.984375
+    },
+    {
+        "HCC": "253",
+        "Override_HCC": null,
+        "Description": "Artificial Openings for Feeding or Elimination",
+        "start": 0.984375,
+        "end": 0.9921875
+    },
+    {
+        "HCC": "254",
+        "Override_HCC": null,
+        "Description": "Amputation Status, Lower Limb/Amputation Complications",
+        "start": 0.9921875,
+        "end": 1
+    }
+]
