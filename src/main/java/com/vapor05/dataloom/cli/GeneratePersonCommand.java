@@ -4,6 +4,7 @@ import com.vapor05.dataloom.databus.DataMap;
 import com.vapor05.dataloom.databus.DataMapException;
 import com.vapor05.dataloom.databus.exporter.JSONExporter;
 import com.vapor05.dataloom.generator.demographic.PersonGenerator;
+import com.vapor05.dataloom.transformer.DateFormatTransformer;
 import com.vapor05.dataloom.transformer.MoveKeyTransformer;
 import java.io.File;
 import java.io.IOException;
@@ -56,31 +57,30 @@ public class GeneratePersonCommand implements Command {
         DataMap person = new DataMap();
         PersonGenerator generator = new PersonGenerator();
         MoveKeyTransformer moveKey = new MoveKeyTransformer();
+        DateFormatTransformer formatDate = new DateFormatTransformer();
         JSONExporter writer;
         
         generator.setSeed(seed);
         person = generator.generate(person);
-        moveKey.setSourceKey("state");
-        moveKey.setDestinationKey("location.state");
-        person = moveKey.transform(person);
-        moveKey.setSourceKey("city");
-        moveKey.setDestinationKey("location.city");
-        person = moveKey.transform(person);
-        moveKey.setSourceKey("zip");
-        moveKey.setDestinationKey("location.zip");
-        person = moveKey.transform(person);
-        moveKey.setSourceKey("address");
-        moveKey.setDestinationKey("location.address");
-        person = moveKey.transform(person);
+        person = moveKey.transform("state", "location.state", person);
+        person = moveKey.transform("city", "location.city", person);
+        person = moveKey.transform("zip", "location.zip", person);
+        person = moveKey.transform("address", "location.address", person);
+        person = moveKey.transform("condition", "health.condition", person);
+        person = moveKey.transform("hccCode", "health.hccCode", person);
+        person = formatDate.transform("birthDate", "yyyy-MM-dd", null, person);
         
         if (person.containsKey("jobTitle"))
         {
             moveKey.setSourceKey("jobTitle");
             moveKey.setDestinationKey("employment.jobTitle");
-            person = moveKey.transform(person);
-            moveKey.setSourceKey("salary");
-            moveKey.setDestinationKey("employment.salary");
-            person = moveKey.transform(person);
+            person = moveKey.transform("jobTitle", "employment.jobTitle", person);
+            
+            if (person.containsKey("salary"))
+            {
+                moveKey.setSourceKey("salary");
+                person = moveKey.transform("salary", "employment.salary", person);
+            }
         }
         
         if (outFile == null) 

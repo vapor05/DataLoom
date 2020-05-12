@@ -5,6 +5,7 @@ import com.vapor05.dataloom.databus.DataMapException;
 import com.vapor05.dataloom.generator.AbstractGenerator;
 import com.vapor05.dataloom.generator.AddressGenerator;
 import com.vapor05.dataloom.generator.DateGenerator;
+import com.vapor05.dataloom.generator.health.HCCGenerator;
 import java.util.Date;
 
 /**
@@ -20,6 +21,7 @@ public class PersonGenerator extends AbstractGenerator  {
     private AddressGenerator address;
     private EducationGenerator education;
     private EmploymentGenerator employment;
+    private HCCGenerator hcc;
     
     public PersonGenerator() throws DataMapException
     {
@@ -30,6 +32,7 @@ public class PersonGenerator extends AbstractGenerator  {
         address = new AddressGenerator("address", "state", "city", "zip", "street");
         education = new EducationGenerator("education", "birthDate");
         employment = new EmploymentGenerator("jobTitle", "salary", "birthDate");
+        hcc = new HCCGenerator("condition");
     }
 
     public void setGender(GenderGenerator gender)
@@ -67,6 +70,11 @@ public class PersonGenerator extends AbstractGenerator  {
         this.employment = employment;
     }
     
+    public void setHcc(HCCGenerator hcc)
+    {
+        this.hcc = hcc;
+    }
+    
     @Override
     public DataMap generate(DataMap record) throws DataMapException
     {
@@ -77,6 +85,7 @@ public class PersonGenerator extends AbstractGenerator  {
         record = address.generate(record);
         record = education.generate(record);
         record = employment.generate(record);
+        record = hcc.generate(record);
         
         return record;
     }
@@ -92,6 +101,7 @@ public class PersonGenerator extends AbstractGenerator  {
         address.setChildGeneratorsSeed(seed);
         education.setSeed(seed);
         employment.setSeed(seed);
+        hcc.setSeed(seed);
     }
     
 }
