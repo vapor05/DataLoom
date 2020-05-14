@@ -68,6 +68,7 @@ public class GeneratePersonCommand implements Command {
         person = moveKey.transform("address", "location.address", person);
         person = moveKey.transform("condition", "health.condition", person);
         person = moveKey.transform("hccCode", "health.hccCode", person);
+        person = moveKey.transform("bloodtype", "health.bloodtype", person);
         person = formatDate.transform("birthDate", "yyyy-MM-dd", null, person);
         
         if (person.containsKey("jobTitle"))

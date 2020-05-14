@@ -5,6 +5,7 @@ import com.vapor05.dataloom.databus.DataMapException;
 import com.vapor05.dataloom.generator.AbstractGenerator;
 import com.vapor05.dataloom.generator.AddressGenerator;
 import com.vapor05.dataloom.generator.DateGenerator;
+import com.vapor05.dataloom.generator.health.BloodTypeGenerator;
 import com.vapor05.dataloom.generator.health.HCCGenerator;
 import java.util.Date;
 
@@ -22,6 +23,7 @@ public class PersonGenerator extends AbstractGenerator  {
     private EducationGenerator education;
     private EmploymentGenerator employment;
     private HCCGenerator hcc;
+    private BloodTypeGenerator bloodtype;
     
     public PersonGenerator() throws DataMapException
     {
@@ -33,6 +35,7 @@ public class PersonGenerator extends AbstractGenerator  {
         education = new EducationGenerator("education", "birthDate");
         employment = new EmploymentGenerator("jobTitle", "salary", "birthDate");
         hcc = new HCCGenerator("condition");
+        bloodtype = new BloodTypeGenerator("bloodtype");
     }
 
     public void setGender(GenderGenerator gender)
@@ -86,6 +89,7 @@ public class PersonGenerator extends AbstractGenerator  {
         record = education.generate(record);
         record = employment.generate(record);
         record = hcc.generate(record);
+        record = bloodtype.generate(record);
         
         return record;
     }
@@ -102,6 +106,7 @@ public class PersonGenerator extends AbstractGenerator  {
         education.setSeed(seed);
         employment.setSeed(seed);
         hcc.setSeed(seed);
+        bloodtype.setSeed(seed);
     }
     
 }

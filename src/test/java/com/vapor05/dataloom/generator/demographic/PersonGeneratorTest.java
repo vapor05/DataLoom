@@ -23,7 +23,7 @@ public class PersonGeneratorTest {
         long start;
         long elapsed;
         
-        generator.setSeed(12L);
+        generator.setSeed(2L);
         generator.setKey("person");
         data = generator.generate(data);
 
@@ -40,6 +40,7 @@ public class PersonGeneratorTest {
         assertTrue(data.containsKey("salary"));
         assertTrue(data.containsKey("hccCode"));
         assertTrue(data.containsKey("condition"));
+        assertTrue(data.containsKey("bloodtype"));
         assertTrue(numPattern.matcher(data.getString("zip")).matches());
         
         assertTimeout(ofMillis(2), () -> {

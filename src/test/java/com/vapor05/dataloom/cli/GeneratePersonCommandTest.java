@@ -47,7 +47,7 @@ public class GeneratePersonCommandTest {
         Pattern numPattern = Pattern.compile("\\d\\d\\d\\d\\d");
         DataMap data;
         
-        command.setParameters(new String[]{"3"});
+        command.setParameters(new String[]{"2"});
         command.setPrintStream(new PrintStream(outTest));
         command.execute();
 
@@ -63,6 +63,9 @@ public class GeneratePersonCommandTest {
         assertTrue(data.getDataMap("location").containsKey("address"));
         assertTrue(data.getDataMap("employment").containsKey("jobTitle"));
         assertTrue(data.getDataMap("employment").containsKey("salary"));
+        assertTrue(data.getDataMap("health").containsKey("condition"));
+        assertTrue(data.getDataMap("health").containsKey("hccCode"));
+        assertTrue(data.getDataMap("health").containsKey("bloodtype"));
         assertTrue(numPattern.matcher(data.getDataMap("location").getString("zip")).matches());
     }
     
