@@ -17,15 +17,17 @@ import java.io.PrintStream;
 public class GeneratePersonCommand implements Command {
 
     private PrintStream out;
+    private long recordNumber;
     private long seed;
     private File outFile;
     
     @Override
     public void setParameters(String[] parameters) throws DataLoomException
     {
-        seed = Long.parseLong(parameters[0]);
+        recordNumber = Long.parseLong(parameters[0]);
+        seed = Long.parseLong(parameters[1]);
         
-        if (parameters.length != 1) outFile = new File(parameters[1]);
+        if (parameters.length == 3) outFile = new File(parameters[2]);
     }
 
     @Override
@@ -45,22 +47,19 @@ public class GeneratePersonCommand implements Command {
     {
         return "Generate randomized person information.\n" +
             "       Usage:\n" +
-            "           person <seed> [output File]\n" +
+            "           person <number of records> <seed> [output File]\n" +
+            "               <number of records>: An integer value of the number of person records to generate.\n" +
             "               <seed>: An integer value to seed the data generation. The same seed value will produce the same data output.\n" +
             "           Optional:\n" +
             "               [output file]:  Full filepath for person data to be written to.";
     }
-
-    @Override
-    public boolean execute() throws DataLoomException, DataMapException
+    
+    private DataMap generatePerson(PersonGenerator generator) throws DataMapException
     {
         DataMap person = new DataMap();
-        PersonGenerator generator = new PersonGenerator();
         MoveKeyTransformer moveKey = new MoveKeyTransformer();
         DateFormatTransformer formatDate = new DateFormatTransformer();
-        JSONExporter writer;
         
-        generator.setSeed(seed);
         person = generator.generate(person);
         person = moveKey.transform("state", "location.state", person);
         person = moveKey.transform("city", "location.city", person);
@@ -84,16 +83,31 @@ public class GeneratePersonCommand implements Command {
             }
         }
         
-        if (outFile == null) 
+        return person;
+    }
+
+    @Override
+    public boolean execute() throws DataLoomException, DataMapException
+    {
+        PersonGenerator generator = new PersonGenerator();
+        JSONExporter writer = null;
+        DataMap person;
+        
+        if (outFile != null) writer = new JSONExporter(outFile);
+        
+        generator.setSeed(seed);
+        
+        for (long record = 0; record < recordNumber; record++)
         {
-            out.println(person.printJSON());
-        }
-        else 
-        {
-            writer = new JSONExporter(outFile);
-            writer.write(person);
+            person = generatePerson(generator);
             
-            try
+            if (outFile == null) out.println(person.printJSON());
+            else writer.write(person);
+        }
+        
+        if (outFile != null) 
+        {
+            try 
             {
                 writer.finish();
             } catch (IOException ex)
@@ -101,7 +115,7 @@ public class GeneratePersonCommand implements Command {
                 throw new DataLoomException(ex.getMessage());
             }
         }
-        
+
         return true;
     }
     

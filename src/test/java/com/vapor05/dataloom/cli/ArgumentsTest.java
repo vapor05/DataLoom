@@ -30,12 +30,12 @@ public class ArgumentsTest {
         
         for (int i=0; i<arguments.getParameters().length; i++) assertEquals(expected[i], arguments.getParameters()[i]);
         
-        args = new String[]{"person", "123456789"};
+        args = new String[]{"person", "10", "123456789"};
         arguments = new Arguments(args);
         arguments.parse();
-        assertEquals(1, arguments.getParameters().length);
+        assertEquals(2, arguments.getParameters().length);
         assertTrue(arguments.getCommand() instanceof GeneratePersonCommand);
-        expected = new String[]{"123456789"};
+        expected = new String[]{"10", "123456789"};
         
         for (int i=0; i<arguments.getParameters().length; i++) assertEquals(expected[i], arguments.getParameters()[i]);
     }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.vapor05.dataloom.cli;
 
 import java.io.ByteArrayOutputStream;
@@ -12,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author NicholasBocchini
+ *
  */
 public class HelpCommandTest {
 
@@ -81,7 +76,8 @@ public class HelpCommandTest {
         help.execute();
         assertEquals("Generate randomized person information.\n" +
             "       Usage:\n" +
-            "           person <seed> [output File]\n" +
+            "           person <number of records> <seed> [output File]\n" +
+            "               <number of records>: An integer value of the number of person records to generate.\n" +
             "               <seed>: An integer value to seed the data generation. The same seed value will produce the same data output.\n" +
             "           Optional:\n" +
             "               [output file]:  Full filepath for person data to be written to.\n",

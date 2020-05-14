@@ -2,9 +2,11 @@ package com.vapor05.dataloom.cli;
 
 import com.vapor05.dataloom.databus.DataMap;
 import com.vapor05.dataloom.json.JSONTokener;
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileReader;
 import java.io.PrintStream;
 import java.util.regex.Pattern;
 import org.junit.jupiter.api.Test;
@@ -32,7 +34,8 @@ public class GeneratePersonCommandTest {
         
         assertEquals("Generate randomized person information.\n" +
             "       Usage:\n" +
-            "           person <seed> [output File]\n" +
+            "           person <number of records> <seed> [output File]\n" +
+            "               <number of records>: An integer value of the number of person records to generate.\n" +
             "               <seed>: An integer value to seed the data generation. The same seed value will produce the same data output.\n" +
             "           Optional:\n" +
             "               [output file]:  Full filepath for person data to be written to.",
@@ -47,7 +50,7 @@ public class GeneratePersonCommandTest {
         Pattern numPattern = Pattern.compile("\\d\\d\\d\\d\\d");
         DataMap data;
         
-        command.setParameters(new String[]{"2"});
+        command.setParameters(new String[]{"1", "2"});
         command.setPrintStream(new PrintStream(outTest));
         command.execute();
 
@@ -75,14 +78,22 @@ public class GeneratePersonCommandTest {
         GeneratePersonCommand command = new GeneratePersonCommand();
         ByteArrayOutputStream outTest = new ByteArrayOutputStream();
         File test = new File("target/generatePerson");
+        BufferedReader reader;
+        int records = 0;
         
         delete(test);
         test.mkdirs();
-        command.setParameters(new String[]{"1", "target/generatePerson/person.json"});
+        command.setParameters(new String[]{"10", "1", "target/generatePerson/person.json"});
         command.setPrintStream(new PrintStream(outTest));
         command.execute();
         test = new File(test, "person.json");
         assertTrue(test.exists());
+        
+        reader = new BufferedReader(new FileReader(test));
+        
+        while (reader.readLine() != null) records++;
+        
+        assertEquals(10, records);
     }
     
     private void delete(File dir)
