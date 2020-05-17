@@ -1,0 +1,38 @@
+[
+    {
+        "start": 18,
+        "end": 45,
+        "retire": 0
+    },
+    {
+        "start": 45,
+        "end": 55,
+        "retire": 0.2
+    },
+    {
+        "start": 55,
+        "end": 65,
+        "retire": 0.35
+    },
+    {
+        "start": 65,
+        "end": 75,
+        "retire": 0.65
+    },
+    {
+        "start": 75,
+        "end": 85,
+        "retire": 0.85
+    },
+    {
+        "start": 85,
+        "end": 95,
+        "retire": 0.95
+    },
+    {
+        "start": 95,
+        "end": 125,
+        "retire": 1
+    }
+]
+

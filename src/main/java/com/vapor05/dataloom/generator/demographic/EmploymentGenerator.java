@@ -20,10 +20,12 @@ public class EmploymentGenerator extends AbstractGenerator {
     private double unemployed = 0.05;
     private String salaryKey = "salary";
     private String birthDateKey = "birthDate";
+    private DataArray<DataMap> retire;
     
     public EmploymentGenerator()
     {
-        source = new DataArray(new JSONTokener(getClass().getResourceAsStream("/config/employment.json")));
+        source = new DataArray(new JSONTokener(getClass().getResourceAsStream("/config/demographic/employment.json")));
+        retire = new DataArray(new JSONTokener(getClass().getResourceAsStream("/config/demographic/retire_ages.json")));
     }
     
     public EmploymentGenerator(String key, String salaryKey, String birthDateKey)
@@ -69,7 +71,11 @@ public class EmploymentGenerator extends AbstractGenerator {
     
         if (age >= 18)
         {
-            if (random.nextDouble() <= unemployed)
+            if (isRetired(age))
+            {
+                record.put(key, "Retired");
+            }
+            else if (random.nextDouble() <= unemployed)
             {
                 record.put(key, "Unemployed");
             }
@@ -110,6 +116,22 @@ public class EmploymentGenerator extends AbstractGenerator {
         }
         
         return employment;
+    }
+    
+    private boolean isRetired(int age) throws DataMapException
+    {
+        double split = random.nextDouble();
+        
+        for (DataMap record : retire)
+        {
+            if (age >= record.getDouble("start") && age < record.getDouble("end")) 
+            {
+                if (split <= record.getDouble("retire")) return true;
+                else return false;
+            }
+        }
+        
+        return false;
     }
     
 }

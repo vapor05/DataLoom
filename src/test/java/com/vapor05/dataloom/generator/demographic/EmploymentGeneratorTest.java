@@ -49,6 +49,11 @@ public class EmploymentGeneratorTest {
         data = new DataMap("{dob:1514786400000}"); //2years old
         data = generator.generate(data);
         assertFalse(data.containsKey("job"));
+        data = new DataMap("{dob:-1577901600000}"); //100years old
+        data = generator.generate(data);
+        assertTrue(data.containsKey("job"));    
+        assertFalse(data.containsKey("salary"));
+        assertEquals("Retired", data.getString("job"));
         
         for (int i=0; i<100000; i++) 
         {
@@ -67,12 +72,5 @@ public class EmploymentGeneratorTest {
         generator.generate(timeData);
         elapsed = System.nanoTime() - start;
         System.out.println("EmploymentGenerator execution time (ms): " + elapsed/(float)1000000);
-        
-        generator.setSeed(122L);
-        data = generator.generate(data);
-        System.out.println(data);
-        
     }
-    
-    
 }
